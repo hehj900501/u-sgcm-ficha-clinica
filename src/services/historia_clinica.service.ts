@@ -36,6 +36,9 @@ export class HistoriaClinicaService {
         })
         .populate({
             path: "alergias"
+        })
+        .populate({
+            path: "expediente_electronico"
         });
     }
 
@@ -80,6 +83,9 @@ export class HistoriaClinicaService {
         })
         .populate({
             path: "alergias"
+        })
+        .populate({
+            path: "expediente_electronico"
         });
     }
 

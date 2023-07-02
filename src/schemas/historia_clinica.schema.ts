@@ -13,4 +13,5 @@ export const HistoriaClinicaSchema = new Schema({
     antecedentes_heredofamiliares: { type: constMongoose.ObjectId, ref: 'AntecedentesHeredofamiliares'},
     signos_vitales: [{ type: constMongoose.ObjectId, ref: 'SignosVitales'}],
     alergias: { type: constMongoose.ObjectId, ref: 'Alergias'},
+    expediente_electronico: { type: constMongoose.ObjectId, ref: 'ExpedienteElectronico'},
 });

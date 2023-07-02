@@ -5,6 +5,7 @@ import { AntecedentesPersonalesNoPatologicosI } from "./antecedentes_personales_
 import { AntecedentesHeredofamiliaresI } from "./antecedentes_heredofamiliares.interface";
 import { SignosVitalesI } from "./signos_vitales.interface";
 import { AlergiasI } from "./alergias.interface";
+import { ExpedienteElectronicoI } from "./expediente_electronico.interface";
 
 export interface HistoriaClinicaI extends Document {
     paciente: PacienteI;
@@ -16,5 +17,6 @@ export interface HistoriaClinicaI extends Document {
     antecedentes_heredofamiliares: AntecedentesHeredofamiliaresI;
     signos_vitales: SignosVitalesI[];
     alergias: AlergiasI;
+    expediente_electronico: ExpedienteElectronicoI;
 
 }

@@ -5,6 +5,7 @@ import { AntecedentesPersonalesNoPatologicosDto } from "./antecedentes_personale
 import { AntecedentesHeredofamiliaresDto } from "./antecedentes_heredofamiliares-dto";
 import { SignosVitalesDto } from "./signos_vitales-dto";
 import { AlergiasDto } from "./alergias-dto";
+import { ExpedienteElectronicoDto } from "./expediente_electronico-dto";
 
 export class HistoriaClinicaDto extends Document {
     readonly paciente: PacienteDto;
@@ -16,4 +17,5 @@ export class HistoriaClinicaDto extends Document {
     readonly antecedentes_heredofamiliares: AntecedentesHeredofamiliaresDto;
     readonly signos_vitales: SignosVitalesDto[];
     readonly alergias: AlergiasDto;
+    readonly expediente_electronico: ExpedienteElectronicoDto;
 }
