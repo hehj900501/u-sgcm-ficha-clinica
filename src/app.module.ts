@@ -36,6 +36,9 @@ import { AppPatologiasCronicoDegenerativasService } from './services/app_patolog
 import { AppPatologiasExantematicasService } from './services/app_patologias_exantematicas.service';
 import { AppPatologiasInfectocontagiosasService } from './services/app_patologias_infectocontagiosas.service';
 import { HistoriaClinicaService } from './services/historia_clinica.service';
+import { ExpedienteElectronicoSchema } from './schemas/expediente_electronico.schema';
+import { ExpedienteElectronicoController } from './controllers/expediente_electronico.controller';
+import { ExpedienteElectronicoService } from './services/expediente_electronico.service';
 
 @Module({
   imports: [
@@ -54,6 +57,7 @@ import { HistoriaClinicaService } from './services/historia_clinica.service';
       { name: 'AppPatologiasCronicoDegenerativas', schema: AppPatologiasCronicoDegenerativasSchema },
       { name: 'AppPatologiasExantematicas', schema: AppPatologiasExantematicasSchema },
       { name: 'AppPatologiasInfectocontagiosas', schema: AppPatologiasInfectocontagiosasSchema },
+      { name: 'ExpedienteElectronico', schema: ExpedienteElectronicoSchema },
       { name: 'HistoriaClinica', schema: HistoriaClinicaSchema },
       { name: 'SignosVitales', schema: SignosVitalesSchema },
       { name: 'TipoAntecedentesPersonalesPatologicos', schema: TipoAntecedentesPersonalesPatologicosSchema },
@@ -68,6 +72,7 @@ import { HistoriaClinicaService } from './services/historia_clinica.service';
     AppPatologiasCronicoDegenerativasController,
     AppPatologiasExantematicasController,
     AppPatologiasInfectocontagiosasController,
+    ExpedienteElectronicoController,
     HistoriaClinicaController,
     SignosVitalesController,
     TipoAntecedentesPersonalesPatologicosController,
@@ -82,6 +87,7 @@ import { HistoriaClinicaService } from './services/historia_clinica.service';
     AppPatologiasCronicoDegenerativasService,
     AppPatologiasExantematicasService,
     AppPatologiasInfectocontagiosasService,
+    ExpedienteElectronicoService,
     HistoriaClinicaService,
     SignosVitalesService,
     TipoAntecedentesPersonalesPatologicosService,
