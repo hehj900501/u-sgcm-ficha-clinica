@@ -46,4 +46,12 @@ export class HistoriaClinicaController {
         return this.historiaClinicaService.deleteHistoriaClinica(idHistoriaClinica);
     }
 
+    @Get('fecha_inicio/:diai/:mesi/:anioi/fecha_fin/:diaf/:mesf/:aniof/sucursal/:sucursalId')
+    findHistoriaClinicasByRangeDateAndSucursal(@Param('diai') diai: string, @Param('mesi') mesi: string, @Param('anioi') anioi: string,
+        @Param('diaf') diaf: string, @Param('mesf') mesf: string, @Param('aniof') aniof: string,
+        @Param('sucursalId') sucursalId: string) : Promise<HistoriaClinicaI[]> {
+        console.log(new Date(), this.TAG, "findHistoriaClinicasByRangeDateAndSucursal");
+        return this.historiaClinicaService.findHistoriaClinicasByRangeDateAndSucursal(anioi, mesi, diai, aniof, mesf, diaf, sucursalId);
+    }
+
 }

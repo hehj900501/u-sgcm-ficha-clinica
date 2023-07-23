@@ -1,5 +1,4 @@
 import { Document } from "mongoose";
-import { PacienteDto } from "./paciente-dto";
 import { AntecedentesPersonalesPatologicosDto } from "./antecedentes_personales_patologicos-dto";
 import { AntecedentesPersonalesNoPatologicosDto } from "./antecedentes_personales_no_patologicos-dto";
 import { AntecedentesHeredofamiliaresDto } from "./antecedentes_heredofamiliares-dto";
@@ -8,7 +7,6 @@ import { AlergiasDto } from "./alergias-dto";
 import { ExpedienteElectronicoDto } from "./expediente_electronico-dto";
 
 export class HistoriaClinicaDto extends Document {
-    readonly paciente: PacienteDto;
     readonly sucursal: String;
     readonly dermatologo: String;
     readonly create_date: Date;

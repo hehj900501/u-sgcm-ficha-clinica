@@ -115,4 +115,65 @@ export class HistoriaClinicaService {
         return await this.historiaClinicaModel.findOneAndDelete({ _id: idHistoriaClinica });
     }
 
+    /**
+     * Muestra todas las curacions de la BD que correspondan a una fecha_hora y una sucursal
+     */
+    async findHistoriaClinicasByRangeDateAndSucursal(anioi, mesi, diai, aniof, mesf, diaf, sucursalId): Promise<HistoriaClinicaI[]> {
+        let startDate = new Date(anioi, mesi, diai);
+        startDate.setHours(0);
+        startDate.setMinutes(0);
+        startDate.setSeconds(0);
+        let endDate = new Date(aniof, mesf, diaf);
+        endDate.setHours(23);
+        endDate.setMinutes(59);
+        endDate.setSeconds(59);
+        return await this.historiaClinicaModel.find({ create_date: { $gte: startDate, $lte: endDate }, sucursal: sucursalId }).sort('consecutivo')
+        // .populate({
+        //     path: "antecedentes_personales_patologicos",
+        //     populate: {
+        //         path: "app_generales"
+        //     }
+        // })
+        // .populate({
+        //     path: "antecedentes_personales_patologicos",
+        //     populate: {
+        //         path: "app_patologias_infectocontagiosas"
+        //     }
+        // })
+        // .populate({
+        //     path: "antecedentes_personales_patologicos",
+        //     populate: {
+        //         path: "app_patologias_cronico_degenerativas"
+        //     }
+        // })
+        // .populate({
+        //     path: "antecedentes_personales_patologicos",
+        //     populate: {
+        //         path: "app_patologias_exantematicas"
+        //     }
+        // })
+        // .populate({
+        //     path: "antecedentes_personales_no_patologicos"
+        // })
+        // .populate({
+        //     path: "antecedentes_heredofamiliares"
+        // })
+        // .populate({
+        //     path: "signos_vitales"
+        // })
+        .populate({
+            path: "paciente"
+        })
+        .populate({
+            path: "dermatologo"
+        })
+        // .populate({
+        //     path: "alergias"
+        // })
+        .populate({
+            path: "expediente_electronico"
+        });
+
+    }
+
 }

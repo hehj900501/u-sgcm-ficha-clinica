@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 export const HistoriaClinicaSchema = new Schema({
     paciente: { type: constMongoose.ObjectId, ref: 'Paciente'},
     sucursal: { type: String },
-    dermatologo: { type: String },
+    dermatologo: { type: constMongoose.ObjectId, ref: 'Empleado' },
     create_date: { type: Date, default: new Date() },
     antecedentes_personales_patologicos: { type: constMongoose.ObjectId, ref: 'AntecedentesPersonalesPatologicos'},
     antecedentes_personales_no_patologicos: { type: constMongoose.ObjectId, ref: 'AntecedentesPersonalesNoPatologicos'},

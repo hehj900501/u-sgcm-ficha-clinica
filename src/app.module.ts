@@ -39,6 +39,8 @@ import { HistoriaClinicaService } from './services/historia_clinica.service';
 import { ExpedienteElectronicoSchema } from './schemas/expediente_electronico.schema';
 import { ExpedienteElectronicoController } from './controllers/expediente_electronico.controller';
 import { ExpedienteElectronicoService } from './services/expediente_electronico.service';
+import { PacienteSchema } from './schemas/paciente.schema';
+import { EmpleadoSchema } from './schemas/empleado.schema';
 
 @Module({
   imports: [
@@ -58,6 +60,8 @@ import { ExpedienteElectronicoService } from './services/expediente_electronico.
       { name: 'AppPatologiasExantematicas', schema: AppPatologiasExantematicasSchema },
       { name: 'AppPatologiasInfectocontagiosas', schema: AppPatologiasInfectocontagiosasSchema },
       { name: 'ExpedienteElectronico', schema: ExpedienteElectronicoSchema },
+      { name: 'Paciente', schema: PacienteSchema },
+      { name: 'Empleado', schema: EmpleadoSchema },
       { name: 'HistoriaClinica', schema: HistoriaClinicaSchema },
       { name: 'SignosVitales', schema: SignosVitalesSchema },
       { name: 'TipoAntecedentesPersonalesPatologicos', schema: TipoAntecedentesPersonalesPatologicosSchema },
